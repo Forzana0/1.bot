@@ -12,9 +12,11 @@ async def start_cmd(message: types.Message):
 async def menu_cmd(message: types.Message):
     await message.answer("Menu : \n1. /help \n2. /echo \n3. /start")
 
-@user_private_router.message(F.text.contains("pay"))
+@user_private_router.message(F.text.contains("pay") & F.text.contains("deliv"))
 async def pay_method(message: types.Message):
     await message.answer("You can pay for this in such method")
+
+@user_private_router.message(Command('duck'))
 
 @user_private_router.message(Command('help'))
 async def help_cmd(message: types.Message):
