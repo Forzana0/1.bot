@@ -18,7 +18,7 @@ async def pay_method(message: types.Message):
     await message.answer("You can pay for this in such method")
 
 @user_private_router.message(Command('duck'))
-async def duck_cmd(messge: types.Message):
+async def duck_cmd(message: types.Message):
     url = get_random_duck()
     await message.answer_photo(url)
 
