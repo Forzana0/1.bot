@@ -2,8 +2,10 @@ from aiogram.filters import CommandStart, Command
 from aiogram import types, Router, F
 import random
 from API.api import get_random_duck
+from filter.chat_types import ChatTypeFilter
 
 user_private_router = Router()
+user_private_router.message.filter(ChatTypeFilter(['private']))
 
 @user_private_router.message(CommandStart())
 async def start_cmd(message: types.Message):
