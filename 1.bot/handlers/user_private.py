@@ -12,7 +12,7 @@ async def start_cmd(message: types.Message):
 async def menu_cmd(message: types.Message):
     await message.answer("Menu : \n1. /help \n2. /echo \n3. /start")
 
-@user_private_router.message(F.text=="pay")
+@user_private_router.message(F.text.contains("pay"))
 async def pay_method(message: types.Message):
     await message.answer("You can pay for this in such method")
 
@@ -35,3 +35,4 @@ async def echo(message: types.Message):
         await message.answer(f"{byebye}{message.from_user.full_name}")
     else:
         await message.reply("I do not understand you")
+
