@@ -1,6 +1,7 @@
 from aiogram.filters import CommandStart, Command
 from aiogram import types, Router, F
 import random
+from API.api import get_random_duck
 
 user_private_router = Router()
 
@@ -17,6 +18,8 @@ async def pay_method(message: types.Message):
     await message.answer("You can pay for this in such method")
 
 @user_private_router.message(Command('duck'))
+async def duck_cmd(messge: types.Message):
+        url = get_random_duck()
 
 @user_private_router.message(Command('help'))
 async def help_cmd(message: types.Message):
