@@ -1,5 +1,5 @@
 from aiogram.filters import CommandStart, Command
-from aiogram import types, Router
+from aiogram import types, Router, F
 import random
 
 user_private_router = Router()
@@ -11,6 +11,10 @@ async def start_cmd(message: types.Message):
 @user_private_router.message(Command('menu'))
 async def menu_cmd(message: types.Message):
     await message.answer("Menu : \n1. /help \n2. /echo \n3. /start")
+
+@user_private_router.message(F.text=="pay")
+async def pay_method(message: types.Message):
+    await message.answer("You can pay for this in such method")
 
 @user_private_router.message(Command('help'))
 async def help_cmd(message: types.Message):
