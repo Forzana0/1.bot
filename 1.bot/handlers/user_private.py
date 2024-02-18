@@ -19,7 +19,7 @@ async def help_cmd(message: types.Message):
 @user_private_router.message(Command('echo'))
 async def echo_cmd(message: types.Message):
     await message.answer("Echo command activated. Add your echo functionality here.")
-
+qeqe
 @user_private_router.message()
 async def echo(message: types.Message):
     hello = random.choice(["hello", "Hi", "привіт"])
